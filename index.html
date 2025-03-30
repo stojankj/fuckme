@@ -8,11 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
-  <title>Fuck Me</title>
+  <title>Happy Easter</title>
 </head>
 
 <body>
-  <h1>FUCK ME</h1>
+  <h2>Happy Easter!</h2>
+  <h1>
+    <img src="Happy Easter.jpg" alt="Христос Васкрс" width="250px" height="200px">
+  </h1>
 
   <script>
     const h1 = document.querySelector("h1");
@@ -48,6 +51,16 @@
     }
 
     moveH1();
+
+    const h2 = document.querySelector("h2");
+
+    function getRandomColor() {
+      return `hsl(${Math.random() * 360}, 100%, 70%)`;
+    }
+
+    setInterval(() => {
+      h2.style.color = getRandomColor();
+    }, 1000);
   </script>
 </body>
 
