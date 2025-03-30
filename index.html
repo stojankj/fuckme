@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+  <title>Fuck Me</title>
+</head>
+
+<body>
+  <h1>FUCK ME</h1>
+
+  <script>
+    const h1 = document.querySelector("h1");
+    let x = 50, y = 50;
+    let dx = 3, dy = 3;
+
+    function getRandomColor() {
+      return `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+    }
+
+    function moveH1() {
+      x += dx;
+      y += dy;
+
+      let hitWall = false;
+
+      if (x + h1.clientWidth >= window.innerWidth || x <= 0) {
+        dx *= -1;
+        hitWall = true;
+      }
+      if (y + h1.clientHeight >= window.innerHeight || y <= 0) {
+        dy *= -1;
+        hitWall = true;
+      }
+
+      if (hitWall) {
+        h1.style.color = getRandomColor();
+      }
+
+      h1.style.transform = `translate(${x - 50}px, ${y - 50}px)`;
+
+      requestAnimationFrame(moveH1);
+    }
+
+    moveH1();
+  </script>
+</body>
+
+</html>
